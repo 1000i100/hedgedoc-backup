@@ -1,0 +1,30 @@
+{
+  "name": "hedgedoc-backup",
+  "version": "1.0.0",
+  "description": "CLI tools to backup demo.hedgedoc.org",
+  "main": "hedgedoc-backup.ts",
+  "scripts": {
+    "build": "run-p build:**",
+    "build:linux-x64": "bun build --compile --minify --sourcemap --target=bun-linux-x64-baseline ./hedgedoc-backup.ts --outfile dist/hedgedoc-backup-linux-x64",
+    "build:linux-arm": "bun build --compile --minify --sourcemap --target=bun-linux-arm64 ./hedgedoc-backup.ts --outfile dist/hedgedoc-backup-linux-arm",
+    "build:windows": "bun build --compile --minify --sourcemap --target=bun-windows-x64-baseline ./hedgedoc-backup.ts --outfile dist/hedgedoc-backup-windows",
+    "build:mac-arm": "bun build --compile --minify --sourcemap --target=bun-darwin-arm64 ./hedgedoc-backup.ts --outfile dist/hedgedoc-backup-mac-arm",
+    "build:mac-x64": "bun build --compile --minify --sourcemap --target=bun-darwin-x64 ./hedgedoc-backup.ts --outfile dist/hedgedoc-backup-mac-intel"
+  },
+  "keywords": ["hedgedoc","backup"],
+  "author": "[1000i100] Millicent Billette <git@1000i100.fr> (https://1forma-tic.fr/)",
+  "license": "GPL-2.0-or-later",
+  "dependencies": {
+    "@opentf/cli-pbar": "^0.7.2",
+    "bun": "^1.1.21",
+    "commander": "^12.1.0",
+    "latinize": "^2.0.0",
+    "tsc": "^2.0.4",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@types/latinize": "^0.2.18",
+    "@types/node": "^22.0.0",
+    "npm-run-all2": "^6.2.2"
+  }
+}
